@@ -32,15 +32,16 @@ char opc;
 int op;
 
 while (1){
-//--
+//--falta comando
 
 key1 = key_scanner(); //Scan the First Digit
 k1 = get_num (key1); //Converting Char into value
 
-//--
+//--falta comando
 key3 = key_scanner(); //Scan the operand
 
-//--
+
+//--falta comando
 key2 = key_scanner(); //Scan the Second Digit
 k2= get_num (key1); //Converting Char into value
 
@@ -59,7 +60,15 @@ switch (key3)
     op= k2/k1;
     break;
 }
-send2LCD ('op');
+if ( key_scanner() == '14')
+{
+    send2LCD ('op');
+    //--falta comando
+}
+if ( key_scanner() == '15')
+{
+    LCD_cmd(0x01);
+}   
 }
 }
 
