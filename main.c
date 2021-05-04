@@ -59,7 +59,7 @@ switch (key3)
     op= k2/k1;
     break;
 }
-opc='op';
+send2LCD ('op');
 }
 }
 
@@ -125,7 +125,6 @@ void LCD_init(void){
 
 // Send command to the LCD
 void LCD_cmd(char cx) {
-    LCD_rdy();              // wait until LCD is ready
     LCD_RS = 0;             // select IR register
     LCD_RW = 0;             // set WRITE mode
     LCD_E  = 1;             // set to clock data
