@@ -16,15 +16,51 @@
 void portsInit(void);
 char key_scanner(void);
 void LCD_init(void);
+void LCD_cmd(char cx);
+void send2LCD(char xy);
+int get_num  (char ch);
+
+
 
 void main(void){
 portsInit();
 LCD_init();
 
+int k2,k1;
+char key1,key2,key3;
+char opc;
+int op;
+
 while (1){
+//--
 
+key1 = key_scanner(); //Scan the First Digit
+k1 = get_num (key1); //Converting Char into value
+
+//--
+key3 = key_scanner(); //Scan the operand
+
+//--
+key2 = key_scanner(); //Scan the Second Digit
+k2= get_num (key1); //Converting Char into value
+
+switch (key3)
+{
+    case '+':
+    op= k1+k2;
+    break;
+    case '-':
+    op= k2-k1;
+    break;
+    case '*':
+    op= k2*k1;
+    break;
+    case '/':
+    op= k2/k1;
+    break;
 }
-
+opc='op';
+}
 }
 
 void portsInit (void){
@@ -108,4 +144,22 @@ void send2LCD(char xy){
     Nop();
     Nop();
     LCD_E  = 0;
+}
+
+int get_num(char ch)         //converting character into integer
+{
+switch(ch)
+{
+case '0': return 0; break;
+case '1': return 1; break;
+case '2': return 2; break;
+case '3': return 3; break;
+case '4': return 4; break;
+case '5': return 5; break;
+case '6': return 6; break;
+case '7': return 7; break;
+case '8': return 8; break;
+case '9': return 9; break;
+}
+return 0;
 }
