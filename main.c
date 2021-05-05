@@ -33,6 +33,7 @@ int op;
 
 while (1){
 //--falta comando
+LCD_cmd(0x1C); //Shift the entire display to the right
 
 key1 = key_scanner(); //Scan the First Digit
 k1 = get_num (key1); //Converting Char into value
