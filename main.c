@@ -47,16 +47,16 @@ k2= get_num (key1); //Converting Char into value
 
 switch (key3)
 {
-    case '+':
+    case '10':
     op= k1+k2;
     break;
-    case '-':
+    case '11':
     op= k2-k1;
     break;
-    case '*':
+    case '12':
     op= k2*k1;
     break;
-    case '/':
+    case '13':
     op= k2/k1;
     break;
 }
