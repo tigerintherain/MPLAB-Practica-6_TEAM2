@@ -23,13 +23,20 @@ int get_num  (char ch);
 
 
 void main(void){
-portsInit();
-LCD_init();
-
+    
 int k2,k1;
 char key1,key2,key3;
 char opc;
 int op;
+
+OSCCON = 0b01110110;// Set the internal oscillator to 8MHz and stable
+LCD_DATA_DIR = 0x00;
+LCD_RS = 0;
+LCD_RW = 0;
+LCD_E  = 0;
+
+portsInit();
+LCD_init();
 
 while (1){
 LCD_cmd(0x1C); //Shift the entire display to the right
