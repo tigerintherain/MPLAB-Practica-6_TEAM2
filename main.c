@@ -12,6 +12,9 @@
 #define LCD_E               LATCbits.LATC0
 #define LCD_E_DIR           TRISCbits.TRISC0
 
+#define _XTAL_FREQ 8000000
+#define SWEEP_FREQ 20
+
 enum por_ACDC {digital, analog};
 
 //void declaration
