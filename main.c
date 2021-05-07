@@ -12,6 +12,7 @@
 #define LCD_E               LATCbits.LATC0
 #define LCD_E_DIR           TRISCbits.TRISC0
 
+enum por_ACDC {digital, analog};
 
 //void declaration
 void portsInit(void);
