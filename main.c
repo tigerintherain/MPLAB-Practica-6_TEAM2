@@ -32,19 +32,30 @@ char opc;
 int op;
 
 while (1){
-//--falta comando
 LCD_cmd(0x1C); //Shift the entire display to the right
 
 key1 = key_scanner(); //Scan the First Digit
 k1 = get_num (key1); //Converting Char into value
-
-//--falta comando
+send2LCD ('key1');
+    
 key3 = key_scanner(); //Scan the operand
+    
+LCD_cmd(0x01); // Clear display and move cursor home
+LCD_cmd(0x1C); //Shift the entire display to the right
+send2LCD ('key3');
+LCD_cmd(0x01); //Decrement cursor (shift cursor to left)
+send2LCD ('key1');
 
-
-//--falta comando
 key2 = key_scanner(); //Scan the Second Digit
 k2= get_num (key1); //Converting Char into value
+    
+LCD_cmd(0x01); // Clear display and move cursor home
+LCD_cmd(0x1C); //Shift the entire display to the right
+send2LCD ('key2');
+LCD_cmd(0x01); //Decrement cursor (shift cursor to left)
+send2LCD ('key3');
+LCD_cmd(0x01); //Decrement cursor (shift cursor to left)
+send2LCD ('key1');
 
 switch (key3)
 {
@@ -63,12 +74,14 @@ switch (key3)
 }
 if ( key_scanner() == '14')
 {
+    LCD_cmd(0xC0);//Force cursor to beginning ( 2nd line)
+    LCD_cmd(0x1C);//Shift the entire display to the right
     send2LCD ('op');
-    //--falta comando
+    
 }
 if ( key_scanner() == '15')
 {
-    LCD_cmd(0x01);
+    LCD_cmd(0x01); // Clear display and move cursor home
 }   
 }
 }
