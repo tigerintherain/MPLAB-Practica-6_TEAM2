@@ -1,3 +1,7 @@
+#include "device_config.h"
+#include <stdlib.h>
+#include <math.h>
+#include <time.h>
 #define LCD_DATA_R          PORTD
 #define LCD_DATA_W          LATD
 #define LCD_DATA_DIR        TRISD
@@ -7,10 +11,7 @@
 #define LCD_RW_DIR          TRISCbits.TRISC1
 #define LCD_E               LATCbits.LATC0
 #define LCD_E_DIR           TRISCbits.TRISC0
-#include "device_config.h"
-#include <stdlib.h>
-#include <math.h>
-#include <time.h>
+
 
 //void declaration
 void portsInit(void);
