@@ -57,7 +57,9 @@ send2LCD ('key3');
 LCD_cmd(0x01); //Decrement cursor (shift cursor to left)
 send2LCD ('key1');
 
-switch (key3)
+if ( key_scanner() == '14')
+{
+    switch (key3)
 {
     case '10':
     op= k1+k2;
@@ -72,8 +74,6 @@ switch (key3)
     op= k2/k1;
     break;
 }
-if ( key_scanner() == '14')
-{
     LCD_cmd(0xC0);//Force cursor to beginning ( 2nd line)
     LCD_cmd(0x1C);//Shift the entire display to the right
     send2LCD ('op');
