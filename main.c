@@ -105,37 +105,37 @@ void portsInit (void){
 }
 
 char key_scanner(void){
-    LATAbits.LB0 = 0;
-    LATAbits.LB1 = 1;
-    LATAbits.LB2 = 1;
-    LATAbits.LB3 = 1;
+    LATBbits.LB0 = 0;
+    LATBbits.LB1 = 1;
+    LATBbits.LB2 = 1;
+    LATBbits.LB3 = 1;
     __delay_ms(SWEEP_FREQ);
     if      (PORTBbits.RB4 == 0) {__delay_ms(SWEEP_FREQ); return 1;}
     else if (PORTBbits.RB5 == 0) {__delay_ms(SWEEP_FREQ); return 2;}
     else if (PORTBbits.RB6 == 0) {__delay_ms(SWEEP_FREQ); return 3;}
     else if (PORTBbits.RB7 == 0) {__delay_ms(SWEEP_FREQ); return 10;}
-    LATAbits.LB0 = 1;
-    LATAbits.LB1 = 0;
-    LATAbits.LB2 = 1;
-    LATAbits.LB3 = 1;
+    LATBbits.LB0 = 1;
+    LATBbits.LB1 = 0;
+    LATBbits.LB2 = 1;
+    LATBbits.LB3 = 1;
     __delay_ms(SWEEP_FREQ);
     if      (PORTBbits.RB4 == 0) {__delay_ms(SWEEP_FREQ); return 4;}
     else if (PORTBbits.RB5 == 0) {__delay_ms(SWEEP_FREQ); return 5;}
     else if (PORTBbits.RB6 == 0) {__delay_ms(SWEEP_FREQ); return 6;}
     else if (PORTBbits.RB7 == 0) {__delay_ms(SWEEP_FREQ); return 11;}
-    LATAbits.LB0 = 1;
-    LATAbits.LB1 = 1;
-    LATAbits.LB2 = 0;
-    LATAbits.LB3 = 1;
+    LATBbits.LB0 = 1;
+    LATBbits.LB1 = 1;
+    LATBbits.LB2 = 0;
+    LATBbits.LB3 = 1;
     __delay_ms(SWEEP_FREQ);
     if      (PORTBbits.RB4 == 0) {__delay_ms(SWEEP_FREQ); return 7;}
     else if (PORTBbits.RB5 == 0) {__delay_ms(SWEEP_FREQ); return 8;}
     else if (PORTBbits.RB6 == 0) {__delay_ms(SWEEP_FREQ); return 9;}
     else if (PORTBbits.RB7 == 0) {__delay_ms(SWEEP_FREQ); return 12;}
-    LATAbits.LB0 = 1;
-    LATAbits.LB1 = 1;
-    LATAbits.LB2 = 1;
-    LATAbits.LB3 = 0;
+    LATBbits.LB0 = 1;
+    LATBbits.LB1 = 1;
+    LATBbits.LB2 = 1;
+    LATBbits.LB3 = 0;
     __delay_ms(SWEEP_FREQ);
     if      (PORTBbits.RB4 == 0) {__delay_ms(SWEEP_FREQ); return 14;}
     else if (PORTBbits.RB5 == 0) {__delay_ms(SWEEP_FREQ); return 0;}
