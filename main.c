@@ -13,7 +13,7 @@
 #define LCD_E_DIR           TRISCbits.TRISC0
 
 #define _XTAL_FREQ 8000000
-#define SWEEP_FREQ 20
+#define SWEEP_FREQ 200
 
 enum por_ACDC {digital, analog};
 
